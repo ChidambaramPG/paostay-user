@@ -1,0 +1,2054 @@
+
+@font-face {
+    font-family: 'gilroyextrabold';
+    src: url('../fonts/gilroy-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/gilroy-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gilroylight';
+    src: url('../fonts/gilroy-light-webfont.woff2') format('woff2'),
+         url('../fonts/gilroy-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal
+}
+body{
+    font-family: 'gilroylight';
+    margin:0;
+}
+h1,h2,h3,h4,h5,h6,hgroup{
+    font-family: 'gilroyextrabold';
+}
+/*.........................................*/
+
+/*modal-signin*/
+
+.modal-body{
+    background-color: #fafafa;
+}
+.modal-header{
+    background-color: #2572FF;
+}
+h4.modal-title{
+    color: #fff;
+    font-size: 16px;
+}
+.close{
+    color: #fff;
+}
+input.modal-inputs {
+    width: 50%;
+}
+label.login-fields {
+    color: #2572FF;
+    text-transform: uppercase;
+    font-family: gilroyextrabold;
+    font-size: 13px;
+}
+button.modal-signin-btn{
+    padding: 8px 46px;
+    text-transform: uppercase;
+    font-family: gilroyextrabold;
+    font-size: 14px;
+    width: 50%;
+}
+/*..............................................*/
+/*home-page*/
+
+/*header*/
+.darkHeader{
+    background-color: #f8f9fa;
+
+}
+.figure{
+    overflow: hidden;       
+    cursor: pointer;
+}
+.figure img{
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.figure:hover img{
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.bg-light {
+    background: transparent !important;
+}
+img.navbar-brand {
+    width: 85px;
+}
+.bg-light .navbar-nav .nav-item .nav-link {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: 'gilroyextrabold';
+    padding: 0px 15px;
+}
+.bg-light .navbar-nav .nav-item .dropdown-toggle{
+    text-transform: capitalize;
+}
+.log-btn {
+    margin-left: 15px;
+}
+button.btn-login {
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'gilroyextrabold';
+    background: #2572FF;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border: none;
+}
+/*...............................................*/
+
+/*booking-form*/
+
+.form-data{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: -48px;
+    background-color: #fff;
+    height: 97px;
+}
+.compass {
+    padding-right: 17px;
+}
+label.location{
+    margin-left:32px;
+}
+input#location {
+    margin-left: 32px;
+}
+form.form .form-field label{
+    display: block;
+    font-size: 14px;
+    color: #151D41;
+    text-transform: uppercase;
+    padding: 15px 19px;
+    margin-bottom:0px;
+}
+form.form .form-field input[type=text]{
+    font-size: 16px;
+    font-family: 'gilroyextrabold';
+    font-weight: 500;
+    text-transform: capitalize;
+    border:none;
+    outline:none;
+    padding: 0px 18px;
+    box-shadow: none;
+}
+a.nav-link.dropdown-toggle {
+    font-size: 16px;
+    color: #151D41;
+    font-family: 'gilroyextrabold';
+    font-weight: 500;
+    padding: 5px 17px;
+}
+.ui-widget-header {
+    background: #2572FF !important;
+    border: #2572FF !important;
+}
+a.ui-state-default.ui-state-highlight {
+    border: #2572FF !important;
+    background: #2572FF !important;
+    color: #fff !important;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover{
+    color: #000 !important;
+    background: #cccccc !important;
+    border:#cccccc !important;
+}
+.form-control::-webkit-input-placeholder{
+    color: #151D41;
+}
+.border-r{
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+button.btn.btn-primary.mb-2.btn-block {
+    background-color: #2572FF;
+    font-size: 22px;
+    font-family:'gilroyextrabold';
+    border-radius: 0px; 
+    text-transform: capitalize;
+    outline: none;
+    padding: 31px 0px;
+}
+/*...................................................*/
+
+/*recent-deals*/
+
+section.recent-deals{
+    padding-top: 70px;
+}
+.head h3{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 28px;
+    padding-bottom: 18px;
+}
+span.deal-offer {
+    font-size: 14px;
+    color: #fff;
+    font-family:'gilroyextrabold'; 
+}
+h4.hotel-type {
+    color: #fff;
+    text-transform: capitalize;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+.deal{
+    position: relative;
+}
+.deal .deal-details{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.deal::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 2.69%, rgba(0, 0, 0, 0.204) 79.34%);
+    width: 100%;
+    height: 100%;
+}
+/*........................................*/
+ 
+ /*first cta*/
+
+.cta{
+    background-color: #2572FF;
+    margin: 60px 0px;   
+}
+.cta-text{
+    margin: 20px 38px;
+}
+.cta-text h4 {
+    color: #fff;
+    text-transform: capitalize;
+}
+.cta-text p{
+    color: #fff;
+}
+button.btn-white{
+    text-transform: capitalize;
+    color: #2572FF;
+    font-family: 'gilroyextrabold';
+    background: #FFF;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 49px;
+    border: none;
+}
+.login{
+    position: absolute;
+    top: 33px;
+}
+/*.............................................*/
+
+/*destination-details*/
+
+section.destination{
+    background-color: #FAFAFA;
+    padding: 80px 0px;
+}
+.destination-img::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 2.69%, rgba(0, 0, 0, 0.204) 79.34%);
+    width: 100%;
+    height: 100%;
+}
+h4.place {
+    font-size: 20px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    text-transform: capitalize;
+}
+.destination-head h3{
+    color: #151D41;
+    text-transform: capitalize;
+    font-size: 28px;
+}
+.destination-head p{
+    color: #151D41;
+    font-size: 14px;
+}
+.destination-img{
+    position: relative;
+    margin: 4px 0px;
+}
+.destination-img .destination-details{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+/*.....................................*/
+
+/*hotels*/
+
+section.hotel{
+    padding: 80px 0px;
+}
+.hotel-head h3 {
+    text-transform: capitalize;
+    font-size: 28px;
+}
+.hotel-head p{
+    font-size: 16px;
+    color:#151D41;
+    padding-bottom: 25px;
+}
+span.place {
+    font-size: 12px;
+    color: #5E6870;
+}
+h4.type {
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #151D41;
+}
+.price{
+    color: #2572FF;
+    padding-top: 23px;
+    font-family: 'gilroyextrabold';
+}
+.checked{
+    color: #F2C94C;
+}
+.unchecked{
+    color: #DADADA;
+}
+.price .time{
+    color: #2572FF;
+    font-family: 'gilroylight';
+}
+/*....................................*/
+
+/*testimonial*/
+
+.dots .owl-dots{
+    display: none;
+}
+.testimonial-data{
+    background-color: #FAFAFA;
+}
+.title h5{
+    font-size: 12px;
+    color: #151D41;
+    text-transform: uppercase;
+    font-family: 'gilroylight';
+    padding-top: 60px;
+}
+.title h3{
+    font-size: 25px;
+    text-transform: capitalize;
+    color: #151D41;
+}
+.title p{
+    font-size: 16px;
+    color: #000000;
+    padding: 30px 148px;
+}
+.rating-star {
+    padding-top: 15px;
+    color: #F2C94C;
+}
+.title h6{
+    text-transform: capitalize;
+    color: #000000;
+    font-size: 14px;
+    font-family: 'gilroylight';
+    padding-top: 20px;
+    padding-bottom:45px;
+}
+/*.............................................*/
+
+/*blog-details*/
+
+section.blog{
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+.blog-img{
+    box-shadow: 0px 0px 1px rgba(152, 160, 148, 0.53);
+}
+.blog-title h5{
+    text-transform: uppercase;
+    font-family: 'gilroylight';
+    font-size: 14px;
+    color: #151D41;
+}
+.blog-title h3{
+    text-transform: capitalize;
+    font-size: 25px;
+    color: #151D41;
+    padding-bottom: 45px;
+}
+span.date {
+    color: #151D41;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.blog-details {
+    padding: 18px;
+}
+.blog-details p {
+    font-size: 16px;
+    color: #151D41;
+    font-family: 'gilroyextrabold';
+    margin: 8px 0px;
+}
+.continue{
+    color: rgba(0, 0, 0, 0.3);
+    font-family: 'gilroyextrabold';
+    font-size: 14px;
+}
+.fa-long-arrow-alt-right{
+    color: rgba(0, 0, 0, 0.3);
+}
+/*...........................................*/
+
+/*second cta*/
+
+.cta1{
+    background-color: #2572FF;
+    margin: 70px 0px;   
+}
+.cta-text1{
+    margin: 19px 38px;
+}
+.cta-text1 h4 {
+    color: #fff;
+    text-transform: capitalize;
+    line-height: 40px;
+    font-size: 25px;
+    letter-spacing: 0.05em;
+    font-family: 'gilroyextrabold';
+}
+button.btn-hotel-booking{
+    text-transform: capitalize;
+    color: #2572FF;
+    font-family: 'gilroyextrabold';
+    background: #FFF;
+    border-radius: 0px;
+    font-size: 15px;
+    padding: 12px 13px;
+    border: none;
+}
+.hotel-booking{
+    position: absolute;
+    top: 37px;
+    left: -2px;
+}
+.fa-long-arrow-alt-right.book{
+    color: #2572FF;
+    padding-left: 6px;
+}
+/*......................................*/
+
+/*footer*/
+
+footer.footer{
+    background-image:url('../image/footer-img.png');
+}
+
+.footer-widget img{
+    width: 40%;
+}
+.footer-widget p{
+    font-size: 15px;
+    line-height: 25px;
+    color: #151D41;
+    padding-top: 24px;
+}
+.footer-widget h6{
+    font-size: 20px;
+    color: #151D41;
+    text-transform: capitalize;
+    padding-top: 35px;
+    padding-left: 40px;
+}
+ul.list-items li{
+    list-style: none;
+    padding-top: 10px;
+    text-transform: capitalize;
+}
+ul.list-items li a{
+    font-size: 15px;
+    color: #151D41;
+}
+a.email{
+    text-transform: lowercase;
+}
+.text-widget{
+    padding-top: 20px;
+}
+ul.social li {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border:1px solid rgba(21, 29, 65, 0.4);
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 42px;
+}
+ul.social li:hover{
+    background-color:#2572FF;
+    border-color: #2572FF;  
+}
+li:hover i{
+    color: #fff;
+}
+.footer-text{
+    padding-top: 80px;
+    color: #151D41;
+    font-size: 16px;
+}
+.social-icons{
+    padding-top: 80px;
+}
+i.links{
+    font-size: 16px;
+    color:#151D41;
+}
+ul.list-items li a:hover{
+    text-decoration: none;
+    color:#2572FF; 
+}
+i.fas.fa-arrow-up.btn-arrow {
+    width: 46px;
+    height: 46px;
+    font-size: 16px;
+    border-radius: 50%;
+    background: #2572FF;
+    border: 1px solid rgba(21, 29, 65, 0.4);
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 46px;
+    border-color: #2572FF;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 70px;
+}
+.col-md-4.padding8{
+    padding-left:8px;
+    padding-right: 8px;
+}
+.col-md-3.padding8{
+    padding-left:8px;
+    padding-right: 8px;
+}
+/*.........................*/
+
+/*mobile-view*/
+
+@media (max-width: 767px){
+img.navbar-brand {
+    width: 47px;
+}
+.destination-head h3{
+    text-align: center;
+}
+.destination-head p{
+    text-align: center;
+}
+.price {
+    padding:0px;
+}
+.title p{
+    padding: 15px;
+}
+button.btn.btn-white {
+    background-color: #2572FF;
+    color: white;
+    margin: 0px 85px;
+}
+button.btn.btn-hotel-booking {
+    background-color: #2572FF;
+    color: white;
+    margin: 0px 95px;
+    padding: 9px 27px;
+}
+.form-field.border-r {
+    border-right: hidden;
+}
+section.recent-deals {
+    padding-top: 389px;
+}
+.form-data {
+    box-shadow: none;
+    margin: 0px;
+}
+form.form {
+    border: 2px solid beige;
+    margin: 16px 0px;
+}
+form.form .form-field input[type=text]{
+    background-color: whitesmoke;
+}
+input#location {
+    margin-left: 0px;
+}
+.compass {
+    background-color: whitesmoke;
+}
+a.nav-link.dropdown-toggle {
+    background-color: whitesmoke;
+}
+button.btn.btn-primary.mb-2.btn-block {
+    height: auto;
+    margin-top: 10px;
+    min-width: 100%;
+    margin-right: 200px;
+    font-size: 15px;
+    padding: 10px;
+}
+section.destination {
+    margin-top: 90px;
+    padding: 56px 0px;
+}
+section.hotel {
+    padding: 40px 0px;
+}
+section.blog {
+    padding-top: 29px;
+}
+.blog-title h3 {
+    padding-bottom: 20px;
+}
+.cta-text1 h4 {
+    line-height: 28px;
+}
+i.fas.fa-long-arrow-alt-right.book {
+    color: white;
+}
+.footer-widget p {
+    text-align: center;
+}
+.footer-widget img {
+    width: 20%;
+    margin-left: 132px;
+    margin-top: 38px;
+}
+.text-widget {
+    padding: 0px;
+}
+ul.list-items li{
+    padding: 0px;
+}
+.footer-text {
+    padding-top: 25px;
+    text-align: center;
+}
+.social-icons {
+    padding-top: 25px;
+}
+.text-right {
+    text-align: center !important;
+    padding: 0px;
+}
+}
+/*...............................................*/
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+button.btn.btn-white {
+    padding: 6px 28px;
+}
+button.btn-hotel-booking {
+    padding: 0px;
+    margin-right: 25px;
+}
+label.location{
+    margin-left: 20;
+}
+input#location {
+    margin-left: 23px;
+}
+form.form .form-field label {
+    padding: 15px 4px;
+}
+form.form .form-field input[type=text] {
+        padding: 0px;
+}
+a.nav-link.dropdown-toggle {
+    padding: 5px 2px;
+}
+}
+/*...............................................*/
+
+/*hotel-page*/
+
+/*header*/
+
+ul.navbar-nav.mr-auto {
+    margin-left: 55px;
+}
+.bg-white {
+    background: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+img.navbar-brand {
+    width: 80px;
+}
+.bg-white .navbar-nav .nav-item .nav-link {
+    font-size: 18px;
+    color: #151D41;
+    text-transform: capitalize;
+    font-family: 'gilroylight';
+    margin-left: 10px;
+}
+.bg-white .navbar-nav .nav-item .dropdown-toggle{
+    text-transform: capitalize;
+    font-family: 'gilroyextrabold';
+}
+/*....................................................*/
+
+/*single-hotel details*/
+
+section.hotel-booking-details {
+    margin-top: 125px;
+}
+.no-padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.hotelss {
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 35px 0;
+    margin-right: 5px;
+}
+.hotelss p {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #fff;
+    text-transform: capitalize;
+    font-family: 'gilroyextrabold';   
+}
+/*.......................................*/
+
+/*owl-carousel*/
+
+.slider{
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+}
+img.img-slider {
+    height: 370px;
+}
+.owl-dots {
+    position: absolute;
+    left: 379px;
+    top: 300px;
+    border: 1px solid rgba(44, 44, 45, 0.25);
+    border-radius: 30px;
+    background: rgba(44, 44, 45, 0.25);
+    width: 26%;
+    height: 37px;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: white;
+}
+/*..................................*/
+
+/*booking-form*/
+
+.booking{
+    background: #FAFAFA;
+    padding: 20px 0px;
+}
+.form-field1 {
+    padding-top: 25px;
+    padding-left: 3px;
+}
+.form-field1 label {
+    text-transform: uppercase;
+    color: #151D41;
+    font-size: 12px;
+    padding: 0px 13px;
+}
+.form-control1 {
+    border: none;
+    background: #FAFAFA;
+    padding: 0px;
+    overflow: hidden;
+    margin-left: 13px;
+    outline: none;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-family: 'gilroyextrabold';
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+i.fas.fa-long-arrow-alt-right.continue-btn {
+    color: white;
+    padding-left: 14px;
+}
+.booking-details{
+  background-color: #fff;
+  margin: 15px;
+  padding: 10px;
+}
+
+span.booking-summary_room{
+    text-transform: capitalize;
+    color: #151D41;
+    font-size: 16px;
+    font-family: 'gilroyextrabold';
+    margin-left: 12px;
+}
+.booking-details p {
+    color: #5E6870;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+span.rate {
+    color: #151D41;
+    font-size: 13px;
+    font-family: 'gilroyextrabold';
+}
+span.overline {
+    font-size: 13px;
+    color: rgba(21, 29, 65, 0.5);
+    font-family: 'gilroyextrabold';
+    text-decoration: line-through;
+}
+span.offer {
+    font-size: 10px;
+    border: 1px solid #F2C94C;
+    background: #F2C94C;
+    color: #fff;
+}
+i.fa.fa-gear.btn-gear{
+    color: #fff;
+    background: rgba(21, 29, 65, 0.4);
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    line-height: 23px;
+    font-size: 11px;
+    margin: -34px 9px;
+}
+label.custom-control-label.checkbox-discount {
+    margin-top: -30px;
+}
+
+span.tax {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.25);
+}
+button.btn.btn-primary.btn-continue {
+    width: 96%;
+    border-radius: unset;
+    text-transform: uppercase;
+    font-family: gilroyextrabold;
+}
+span.total {
+    color: #151D41;
+    font-size: 14px;
+    display: block;
+    margin-left: 38px;
+}
+span.breakfast-banner-text {
+    color: #5E6870;
+    font-size: 15px;
+    font-family: 'gilroylight';
+    text-transform: capitalize;
+}
+span.rooms {
+    font-size: 12px;
+    color: #000000;
+    text-transform: capitalize;
+    display: block;
+    margin-left: 38px;
+}
+.notes h5 {
+    margin-left: 17px;
+    margin-top: 24px;
+    text-transform: capitalize;
+    color: #151D41;
+    font-size: 16px;
+    border-bottom: 2px solid rgba(21, 29, 65, 0.3);
+}
+ul.keep-notes {
+    margin-top: 12px;
+}
+ul.keep-notes li {
+    font-size: 12px;
+    color: #000000;
+    font-family: 'gilroylight';
+    padding: 6px 0px;
+}
+i.fas.fa-user-plus.btn-user {
+    color: #2572FF;
+    margin-left: 8px;
+}
+/*..................................*/
+
+.hotel-name{
+    margin-top: 25px;
+}
+.hotel-name h2 {
+    text-transform: capitalize;
+    color: #151D41;
+    font-size: 30px;
+}
+span.location {
+    font-size: 14px;
+    color: rgba(21, 29, 65, 0.5);
+    text-transform: capitalize;
+    font-family: 'gilroyextrabold';
+}
+i.fas.fa-map-marker-alt.location-btn {
+    color: #AAAAAA;
+}
+span.star-rates {
+    color: #151D41;
+    font-size: 20px;
+    font-family: 'gilroyextrabold';
+}
+span.vote {
+    color: #888888;
+    font-size: 12px;
+}
+/*.........................*/
+
+/*aminitity*/
+
+.amenities{
+    background-color: rgba(242, 242, 242, 0.2);
+    margin-top: 40px;
+}
+ul.list-inline li{
+    width: 46px;
+    height: 46px;
+    font-size: 16px;
+    border-radius: 50%;
+    background:   #2572FF;
+    text-align: center;
+    line-height: 40px;
+    border-color: #2572FF;
+    margin-left: 22px;
+}
+ul.list-inline {
+    padding-bottom: 30px;
+}
+.amenities h5 {
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: #222222;
+    text-transform: capitalize; 
+    padding: 25px 20px;
+}
+span.icon-head {
+    color: #888888;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+/*.........................................*/
+
+/*hotel-rules with map*/
+
+.location-details{
+    margin-top: 40px;
+}
+.rules h5 {
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #151D41;
+    border-bottom: 2px solid rgba(21, 29, 65, 0.3);
+}
+ul.dot-list li {
+    font-size: 12px;
+    color: #000;
+    font-family: 'gilroylight';
+}
+ul.dot-list {
+    padding: 9px 16px;
+    line-height: 33px;
+} 
+/*.........................................*/
+
+/*recommended hotel*/
+
+.recommended-hotels h3{
+    text-transform: capitalize;
+    font-size: 20px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.hotel-pic{
+    background:linear-gradient(180deg, rgba(149, 149, 149, 0) 52.97%, 
+        rgba(0, 0, 0, 0.63) 92.79%, rgba(0, 0, 0, 0.56) 92.8%);
+    position: relative;
+}
+.hotel-grid{
+    background-color: #FAFAFA;
+}
+span.fa.fa-star.checked.star {
+    position: absolute;
+    bottom: 42px;
+    left: 60px;
+}
+span.rupees {
+    position: absolute;
+    bottom: 37px;
+    font-family: 'gilroyextrabold';
+    color: #fff;
+    font-size: 16px;
+}
+span.count {
+    position: absolute;
+    bottom: 37px;
+    left: 84px;
+    color: #fff;
+    font-family: 'gilroyextrabold';
+    font-size: 16px;
+}
+h4.hotel-grid-name {
+    font-size: 20px;
+    color: #151D41;
+    text-transform: capitalize;
+    padding-left: 20px;
+}
+span.hotel-place {
+    font-size: 14px;
+    color: #151D41;
+    text-transform: capitalize;
+    font-family: 'gilroyextrabold';
+    padding-left: 20px;
+}
+.day-price h5 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #151D41;
+    padding-left: 53px;
+    padding-top: 34px;
+}
+ul.list {
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
+}
+ul.list li{
+    font-size: 12px;
+    text-transform: capitalize;
+    color: #151D41;
+    list-style: none;
+    padding-right: 2px;
+}
+.hotel-grid-details {
+    padding-bottom: 25px;
+}
+.dot {
+    height: 7px;
+    width: 7px;
+    background-color: #000;
+    border-radius: 50%;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+img.love {
+    position: absolute;
+    bottom: 117px;
+    left: 75px;
+}
+h5.common-style.color-blue{
+    color: #151D41;
+}
+/*......................................*/
+
+/*mobile-view hotelpage*/
+
+@media(max-width: 767px){
+
+
+ .votes {
+    margin-top: -55px;
+}
+.hotel-name h2{
+    font-size: 25px;
+}
+.hotel-name {
+    margin-top: 62px;
+}
+span.location{
+    font-size: 12px;
+}
+.booking{
+    margin-top: 50px;
+}
+.owl-dots {
+    width: 100%;
+    left: 0px;
+    top: 273px;
+}
+}
+/*...............................................*/
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+
+.owl-dots {
+    left: 164px;
+    top: 265px;
+}
+.hotel-name h2 {
+    font-size: 27px;
+}
+span.location {
+    font-size: 12px;
+}
+ul.dot-list {
+    padding: 9px 7px;
+    line-height: 26px;
+}
+.hotel-name {
+    margin-top: 60px;
+} 
+span.booking-summary_room{
+    margin-left: 0;
+}  
+span.total{
+    margin-left: 0;
+} 
+span.breakfast-banner-text{
+    margin-left: 2px;
+}
+span.rooms{
+    margin-left: 0;
+}
+
+}   
+/*......................................................*/
+/*result-page*/
+
+/*search-bar*/
+
+section.search-bar {
+    margin-top: 87px;
+    background: #FAFAFA;
+    padding: 30px;
+}
+form.form-inline{
+    margin:auto;
+}
+i.search-blue{
+    color: #2572FF;
+}
+.search-location{
+    border-bottom: 2px solid #000000;
+}
+.search-location input[type="text"] {
+    border: none;
+    background: #FAFAFA;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 18px;
+    color: #000000;
+    padding: 0px 18px;
+}
+.search-date {
+    margin: 0px 9px;
+}
+.search-date input[type="text"] {
+    border: none;
+    background: #FAFAFA;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 18px;
+    color: #000000;
+    width: 100%;
+}
+.members input[type="text"] {
+    border: none;
+    background: #FAFAFA;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 18px;
+    color: #000000;
+}
+.members{
+    margin-left: 20px;
+}
+button.btn.btn-primary.btn-medium {
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 6px 41px;
+    border-radius: unset;
+    font-family: 'gilroyextrabold';
+}
+
+/*....................................*/
+
+/*sorting-details*/
+
+section.top-text{
+    margin-top: 30px;
+}
+.top-head h3 {
+    font-size: 16px;
+    color: #151D41;
+    font-family: 'gilroylight';
+    text-transform: capitalize;
+}
+span.common {
+    font-size: 16px;
+    color: #151D41;
+    text-transform: capitalize;
+    font-family: 'gilroyextrabold';
+}
+h3.common{
+    font-size: 16px;
+    color: #151D41;
+    text-transform: capitalize;
+    font-family: 'gilroyextrabold';
+}
+span.page {
+    font-family: 'gilroyextrabold';
+    color:#999;
+}
+.sorting-head {
+    margin-left: 42px;
+}
+.sorting-head h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #151D41;
+    font-family: 'gilroyextrabold';
+}
+.sorting{
+    font-size: 16px;
+    color: #151D41;
+    font-family: 'gilroylight';
+    text-transform: capitalize;
+    padding: 0px 10px;
+}
+
+/*.......................................*/
+
+/*filter-images*/
+ 
+section.result-page {
+    margin-top: 35px;
+    margin-bottom: 54px;
+}
+
+h5.color-blue{
+    color:#2572FF;
+    font-size: 12px;
+    font-family:  'gilroyextrabold';
+    text-transform: uppercase;
+    padding-right: 22px;
+}
+/*....................................*/
+ 
+ /*filteration-details*/
+
+.filter-head h3{
+    font-size: 18px;
+    color: #030F09;
+    text-transform: capitalize;
+    padding: 32px 24px;
+}
+.filter-details{
+    background: #FAFAFA;
+    padding-bottom: 10px;
+}
+.filter-headings h3{
+    color: #151D41;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px 24px;
+}
+i.search-grey{
+    color: rgba(21, 29, 65, 0.5);
+}
+i.fa.fa-heart.btn-heart{
+    color: #fff;
+}
+span.row {
+    margin-top: 18px;
+}
+a.hotel-details-link{
+    text-decoration: none;
+}
+.pic-details {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+a.fav {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.hotel-small {
+    background: #fafafa;
+    margin-bottom: 24px;
+    padding-bottom: 26px;
+}
+.rating-count {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    font-size: 16px;
+    color: #fff;
+    font-family:  'gilroyextrabold';
+}
+.pricing{
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    font-size: 16px;
+    color: #fff;
+    font-family:  'gilroyextrabold';
+}
+.search-localities{
+    background: #F5F5F5;
+    margin: 13px 22px;
+    padding: 4px 3px;
+}
+.search-localities h3{
+    font-size: 16px;
+    color: #000000;
+    text-transform: capitalize;
+    font-family: 'gilroylight';
+}
+.search-localities input[type="text"]{
+    color: #000000;
+    font-size: 16px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #F5F5F5;
+    padding: 2px 20px;
+}
+ul.location-list li {
+    list-style: none;
+    color: #000000;
+    font-size: 17px;
+    padding: 3px;
+    font-family: 'gilroylight';
+}
+a.city-names:hover{
+    text-decoration: none;
+}
+.location-names {
+    margin-left: -15px;
+}
+.checkbox{
+    display: block;
+    padding: 0px 24px;
+}
+label.checkbox {
+    font-size: 17px;
+    color: #000000;
+    text-transform: capitalize;
+    font-family: 'gilroylight';
+}
+span.main{
+    margin-left: 3px;
+}
+/*............................................*/
+
+/*mobile-view-result page*/
+
+@media (max-width: 767px){
+section.search-bar {
+    padding: 27px 0px;
+}
+.search-date {
+    margin: 0px;
+    padding: 23px 0px;
+}
+.members {
+    margin: 0px;
+}
+button.btn.btn-primary.btn-medium {
+    width: 100%;
+}
+h3.common {
+    padding: 11px 0px;
+}
+.sorting-head {
+    margin: 0px;
+}
+ul.list {
+    padding-left: 18px;
+}
+}
+/*.........................................*/
+/*booking-result page*/
+
+section.booking-result{
+    background: #FAFAFA;
+}
+.top-heading{
+    margin-top: 19px;
+}
+.top-heading h2{
+    color: #151D41;
+    font-size: 20px;
+    font-family: 'gilroyextrabold';
+    text-transform: uppercase;
+    text-align: center;
+}
+/*...................................*/
+
+/*guest-details*/
+
+form.forms {
+    margin: 0px 22px;
+}
+.guest-details-result{
+    background: #FFFFFF;
+    margin-top: 10px;
+    padding-bottom: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+}
+.iti.iti--allow-dropdown {
+    width: 100%;
+}
+i.fas.fa-check-circle {
+    color:#2572FF;
+}
+.guest-details-result h3{
+    color: #151D41;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding-top: 15px;
+    padding-left: 21px;
+}
+input.result-data {
+    width: 50%;
+    border: none;
+    background: #F7F7F7;
+    font-family: 'gilroylight';
+    font-size: 16px;
+    color: #5E6870;
+    padding: 15px 20px;
+}
+label.name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'gilroylight';   
+    color: #5E6870;
+    margin-top: 10px;
+}
+.add-ons-details{
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    margin-top: 20px;
+    width: 94%;
+    margin-left: 20px;
+}
+p.warning-msg {
+    font-size: 15px;
+}
+label.custom-control-label.checkbox-discount.bookingpage {
+    margin-top: 10px;
+}
+span.discount{
+    color:#5E6870;
+    font-size: 18px;
+    font-family: 'gilroylight';
+    padding: 0px 15px;
+}
+label.custom-control-label.checkbox-discount.mr-left {
+    margin-left: 29px;
+    margin-top: 10px;
+}
+.custom-checkbox .custom-control-label.checkbox-discount::before{
+    border-radius: 50%;
+    cursor: pointer;
+}
+span.coupon{
+    color: #000000;
+    font-size: 12px;
+    font-family: 'gilroylight';
+    padding: 0px 48px;
+    display: block;
+}
+i.fas.fa-check-circle.checkmark {
+    margin-left: 25px;
+    margin-top: 10px;
+}
+a.pull-right.links {
+    margin-right: 28px;
+    margin-top: -33px;
+    color: #151D41;
+    font-size: 12px;
+    font-family: 'gilroyextrabold';
+}
+i.fas.fa-check-circle.pull-right.left {
+    margin-left: 3px;
+}
+button.pay-now {
+    background: #fff;
+    color: #2572FF;
+    border: 1px solid #2572FF;
+    font-size: 16px;
+    margin-top: 18px;
+    padding: 6px 0px;
+    margin-left: 5px;
+    width: 100%;
+    font-family: 'gilroyextrabold';
+    text-transform: uppercase;
+    border-radius: 0px;
+}
+i.fas.fa-long-arrow-alt-right.pay-btn {
+    color: #2572FF;
+}
+button.pay-hotel{
+    padding: 6px 0px;
+    font-size: 16px;
+    margin-top: 18px;
+    margin-left: -21px;
+    width: 100%;
+    font-family: 'gilroyextrabold';
+    text-transform: uppercase;
+    border-radius: 0px;
+}
+/*..................................*/
+
+
+/*payment-details*/
+
+.payment-details{
+    background: #ffffff;
+    margin-top: 10px;
+}
+.date-time-details {
+    margin-top: 28px;
+    padding: 5px 28px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+i.fas.fa-user-plus.blue {
+    color: #000;
+}
+
+i.far.fa-arrow-alt-circle-right.btn-arrows {
+    color: #2572FF;
+}
+i.far.fa-arrow-alt-circle-left.btn-arrows {
+    color: #2572FF;
+}
+span.float-right.checkin {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'gilroylight';
+}
+.payment-head{
+    text-align: center;
+}
+.payment-head h2{
+    text-transform: capitalize;
+    font-size: 24px;
+    color: #151D41;
+    letter-spacing: 1px;    
+    padding-top: 26px;
+}
+span.span-title{
+    font-size: 12px;
+    color: #151D41;
+    text-transform: capitalize; 
+}
+span.booking-summary-checkin{
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    font-family: 'gilroylight';
+    margin-top: 12px;
+}
+.checkin-date-booking-summary{
+    color: rgba(34, 34, 34, 0.8);
+    font-size: 14px;
+    font-family: 'gilroyextrabold';
+    line-height: 45px;
+    margin-left: 9px;
+}
+.room-details {
+    margin-top: 17px;
+    padding: 2px 29px;
+}
+span.details{
+    color: #151D41;
+    font-size: 14px;
+    font-family: 'gilroyextrabold';
+    padding: 0px 15px;
+}
+a.change {
+    color: #4F4F4F;
+    font-size: 12px;
+    margin-top: 5px;
+    font-family: 'gilroyextrabold';
+}
+.payment-details-summary h3{
+    color: #151D41;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding-top: 25px;
+    padding-left: 33px;
+}
+td.table-data{
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'gilroylight';
+    text-transform: capitalize;
+}
+td.offers{
+    color: #000000;
+    font-size: 12px;
+    font-family: 'gilroylight';
+}
+td.total-price{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-family: 'gilroyextrabold';
+}
+td.total-amount{
+    color: #151D41;
+    font-size: 15px;
+    font-family: 'gilroyextrabold';
+    text-transform: capitalize;
+}
+span.tax-details{
+    color: #000000;
+    font-size: 10px;
+    font-family: 'gilroylight';
+}
+tr.border-last{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+/*.................................*/
+
+/*mobile-view booking-result page*/
+
+
+ @media(max-width: 767px){
+
+input.result-data {
+    width: 100%;
+}
+label.custom-control-label.checkbox-discount.mr-left {
+    margin-left: 10px;
+}
+span.discount {
+    padding: 0px;
+    font-size: 16px;
+}
+span.coupon {
+    padding: 4px 10px;
+}
+.add-ons-details {
+    width: 89%;
+}
+a.btn.btn-primary.pay-now {
+    margin: 18px 0px;
+    width: 95%;
+}
+a.btn.btn-primary.pay-hotel {
+    margin: 5px 0px;
+    width: 95%;
+}
+.date-time-details {
+    padding: 5px;
+}
+.room-details {
+    padding: 2px 10px;
+}
+}
+/*...............................................*/
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+
+
+span.booking-summary-checkin {
+    float: none;
+}
+.date-time-details {
+    padding: 5px 0px;
+}
+}
+/*...........................................*/
+
+footer.profile-section{
+    background: #FAFAFA;
+}
+footer.section.footer.profile-section{
+    background-image: url(../image/footer-img.png);
+}
+section.profile-page{
+    background: #FAFAFA;
+    margin-top: 86px;
+    height: 900px;
+}
+.guest-name h4{
+    font-size: 20px;
+    color: #151D41;
+    font-family: 'gilroyextrabold';
+    text-transform: capitalize;
+}
+span.mobile-no{
+    color: #000000;
+    font-size: 14px;
+}
+span.guest-email{
+    color: #000000;
+    font-size: 14px;
+    margin-left: 6px;
+}
+i.fa.fa-circle {
+    font-size: 8px;
+}
+button.profile {
+    background: #FFFFFF;
+    border: 1px solid #2572FF;
+    color: #2572FF;
+    text-transform: uppercase;
+    font-family: 'gilroyextrabold';
+    padding: 7px 24px;
+    border-radius: unset;
+}
+.profile-data {
+    padding-top: 32px;
+}
+/*......................................*/
+
+/*profile-page1*/
+
+
+.booking-history{
+    background: #fff;
+    padding-bottom: 188px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+}
+.sidebar{
+    background: #FAFAFA;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 35px 8px;
+    margin-left: 33px;
+    margin-top: 40px;
+}
+i.fa.fa-gear.btn-gear.bg-color {
+    background: #5E6870;
+}
+a.profile-sidebar {
+    padding: 0px 19px;
+    color: #5E6870;
+    font-size: 15px;
+    text-transform: capitalize;
+    line-height: 65px;
+    font-family: 'gilroyextrabold';
+}
+a.profile-sidebar:hover{
+    color: #2572FF;
+    text-decoration: none;  
+}
+a.profile-sidebar:hover i.fa.fa-gear{
+    background: #2572FF;
+    color: #fff;
+}
+a.profile-sidebar:focus {
+    color: #2572FF;
+}
+a.profile-sidebar:focus i.fa.fa-gear{
+    background: #2572FF;
+    color: #fff;
+}
+.booking-history-head h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.8);
+    margin-top: 57px;
+    font-family: 'gilroyextrabold';
+}
+.booking-history-details{
+    background: #FAFAFA;
+    margin-top: 19px;
+    padding: 25px 21px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.hotel-img-details h3 {
+    font-size: 24px;
+    color: #151D41;
+    text-transform: capitalize;
+    font-family: 'gilroyextrabold';
+    margin-top: 11px;
+    margin-left: 12px;
+}
+span.hotel-address {
+    color: #000000;
+    font-size: 11px;
+    text-transform: capitalize;
+    font-family: 'gilroylight';
+    margin-left: 12px;
+}
+.booking-price h4 {
+    color: #151D41;
+    font-size: 22px;
+    text-align: end;
+    margin-top: 12px;
+}
+a.view_details {
+    color: #000000;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+a.view_details:hover {
+    text-decoration: none;
+}
+.hotel-img input[type="text"] {
+    width: 100%;
+    border: none;
+    background: #FAFAFA;
+    outline: none;
+    margin-top: 28px;
+}
+button.book-again {
+    background: #2572FF;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 16px;
+}
+
+/*....................................*/
+
+/*mobile-view profile page1*/
+
+@media(max-width: 767px){
+
+button.profile {
+    width: 100%;
+}
+.sidebar {
+    padding: 0px;
+    margin: 0px;
+}
+a.profile-sidebar{
+    display: block;
+}
+.booking-history-head h3 {
+    text-align: center;
+    margin-top: 27px;
+}
+.hotel-img-details h3 {
+    margin: 7px 0px;
+}
+span.hotel-address {
+    margin: 0px;
+}
+.booking-price h4 {
+    margin:4px 0px;
+    text-align: left;
+}
+footer.section.footer.profile-section.mr-bottom {
+    margin-top: 547px;
+}
+a.view_details {
+    margin-top: -23px;
+}
+}
+/*.........................................*/
+
+/*profile page2*/
+
+.wallet-history-details{
+    background: #FAFAFA;
+    margin-top: 19px;
+    padding: 25px 21px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.pao-wallet-head h3{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    margin-top: 57px;
+    font-family: 'gilroyextrabold';
+    text-transform: uppercase;
+}
+.wallet {
+    text-align: center;
+    padding-bottom: 26px;
+    margin: auto;
+}
+.wallet img {
+    width: 50%;
+}
+
+table.br-top {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.wallet h4{
+    color: #151D41;
+    font-size: 14px;
+    font-family: 'gilroyextrabold';
+    margin-top: 14px;
+}
+span.expiry-date {
+    color: #000000;
+    font-size: 12px;
+    font-family: 'gilroylight';
+}
+td.monthly-usage{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+    font-family: 'gilroylight';
+}
+td.monthly-usage-price{
+    color: #151D41;
+    font-size: 16px;
+    font-family: 'gilroyextrabold';
+}
+/*...............................*/
+/*mobile-view profile2*/
+
+
+@media(max-width: 767px){
+
+.pao-wallet-head h3 {
+    text-align: center;
+}
+.booking-history {
+    padding-bottom: 0px;
+}
+i.fas.fa-arrow-up {
+    position: absolute;
+    bottom: 50px;
+}
+footer.section.footer.profile-section {
+    margin: 0px;
+}
+}
+/*.........................................*/
+
+/*profile-page3*/
+
+.favourite-history-details{
+    margin-top: 19px;
+    padding: 25px 21px;
+}
+.favourites-hotels h3{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    margin-top: 57px;
+    font-family: 'gilroyextrabold';
+    text-transform: uppercase;
+}
+i.fa.fa-heart.blue {
+    color: #2572FF;
+}
+.pricing.profile-page {
+    position: absolute;
+    right: 22px;
+}
+.rating-count.profile-page {
+    position: absolute;
+    left: 26px;
+}
+h4.hotel-grid-name.profile-page {
+    padding-left: 20px;
+    font-size: 17px;
+}
+ul.profile-page li {
+    font-size: 10px;
+}
+h5.profile-page {
+    margin-top: 7px;
+}
+/*.............................*/
+
+/*mobile-view profile3*/
+
+@media(max-width: 767px){
+
+.favourites-hotels h3 {
+    margin-top: 31px;
+    text-align: center;
+}
+footer.section.footer.profile-section.mrg-bottom {
+    margin-top: 235px;
+}
+h5.color-blue {
+    padding: 0px;
+}
+}
+/*..................................*/
+
+/*profile-page 4*/
+
+.edit-profile-details{
+    background: #FAFAFA;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 19px;
+    padding: 25px 21px;
+}
+.edit-profile-head h3{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    margin-top: 57px;
+    font-family: 'gilroyextrabold';
+    text-transform: uppercase;
+}
+label.edit-profile {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'gilroylight';
+    color: #5E6870;
+    margin-top: 14px;
+}
+input.edit-data {
+    width: 50%;
+    border: none;
+    background: #FFF;
+    font-family: 'gilroylight';
+    font-size: 16px;
+    color: #5E6870;
+    padding: 11px 0px;
+}
+button.update-now{
+    background: #2572FF;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 16px;
+    border-radius: unset;
+    text-transform: uppercase;
+    font-family: 'gilroyextrabold';
+}
+/*...............................*/
+
+/*mobile-view profile-page4*/
+@media(max-width: 767px){
+
+.edit-profile-head h3 {
+    margin-top: 30px;
+    text-align: center;
+}
+input.edit-data {
+    width: 100%;
+}
+button.update-now{
+    width: 88%;
+}
+.footer-widget.image img {
+    margin-left: 100px;
+}
+}
+
