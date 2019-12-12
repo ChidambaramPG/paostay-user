@@ -54,7 +54,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="hotel-booking">
-                            <button type="submit" class="btn btn-hotel-booking">book your hotel<i class='fas fa-long-arrow-alt-right book'></i></button>
+                            <button type="submit" class="btn btn-hotel-booking" @click="listHotel">book your hotel<i class='fas fa-long-arrow-alt-right book'></i></button>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,12 @@
 
 <script>
 export default {
-    name:'Blogs'
+    name:'Blogs',
+    methods: {
+        listHotel(){
+            this.$router.push('/hotel-list')
+        }
+    },
 }
 </script>
 

@@ -48,7 +48,7 @@ export default {
     };
   },
   created() {
-    console.log("mounted");
+    // console.log("mounted");
     // if(this.hotels.length < 1){
     //   this.$store.dispatch("fetchHotelList");
     // }
@@ -124,7 +124,7 @@ export default {
   methods: {
    
     dateDifference(dt1, dt2) {
-      console.log(dt1);
+      // console.log(dt1);
       let d1 = new Date(dt1.seconds * 1000);
       let d2 = new Date(dt2.seconds * 1000);
       let timeDiff = d2.getTime() - d1.getTime();

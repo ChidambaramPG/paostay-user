@@ -65,12 +65,12 @@ export default {
   },
   methods: {
     signInMethod: function() {
-      console.log(router);
+      // console.log(router);
       if (this.email && this.password) {
         if (this.validEmail(this.email)) {
           firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
               (user) =>{
-                console.log(user)
+                // console.log(user)
                 router.replace("/");
                 // window.reload()
               }
@@ -86,7 +86,7 @@ export default {
     }
   },
   onCreate(){
-    console.log(this)
+    // console.log(this)
   }
 };
 </script>

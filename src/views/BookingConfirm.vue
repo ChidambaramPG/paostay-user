@@ -326,7 +326,7 @@ export default {
                 }
                 let bookingRef = firebase.firestore().collection("Booking");
                 bookingRef.add(bookingData).then((response) => {
-                    console.log(response);
+                    // console.log(response);
                     alert("booking confirmed")
                     router.replace("profile")
 
@@ -373,7 +373,7 @@ export default {
         //     }
         //   })
         //   .then(resp => resp.json())
-        //   .then(data=> console.log(data))
+        //   .then(data=> // console.log(data))
 
         //     // var options = {
         //     //     "key": "rzp_test_HDcNfetCAuDfcJ", // Enter the Key ID generated from the Dashboard
@@ -416,7 +416,7 @@ export default {
       //   var rzp1 = new Razorpay({...options,order_id:res.data.id});
       //   rzp1.open();
       // })
-      // .catch((err)=>{console.log("ERR",err)});
+      // .catch((err)=>{// console.log("ERR",err)});
 
 
       // //  create options object when creating order
@@ -473,7 +473,7 @@ export default {
                 }
                 let bookingRef = firebase.firestore().collection("Booking");
                 bookingRef.add(bookingData).then((response) => {
-                    console.log(response);
+                    // console.log(response);
                     alert("booking confirmed")
                     router.replace("profile")
 
@@ -490,8 +490,10 @@ export default {
         }
       }
       )
-      .then((res)=>{console.log("PAYMENT RESPONSE",res)})
-      .catch((err)=>{console.log('error')})
+      .then((res)=>{// console.log("PAYMENT RESPONSE",res)
+      })
+      .catch((err)=>{// console.log('error')
+      })
     }
 
     }

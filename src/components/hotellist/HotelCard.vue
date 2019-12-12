@@ -71,16 +71,16 @@ export default {
       let amn = this.hoteldata.amenities;
       
       let avlAmn = []
-      // console.log(amn)
+      // // console.log(amn)
       // let keys = Object.keys(amn);
       for( let key in amn){
-        // console.log(key)
-        // console.log('item: ',amn[key]['status'])
+        // // console.log(key)
+        // // console.log('item: ',amn[key]['status'])
         if(amn[key].status == true){
           avlAmn.push(key);
         }
       }
-      console.log(avlAmn)
+      // console.log(avlAmn)
       // amn.forEach(item => {
       //   if(item.status == true){
       //     avl.push(item);
@@ -102,13 +102,13 @@ export default {
       .where("hotelId", "==", hid)
       .get()
       .then(snapshot => {
-        // console.log(snapshot);
+        // // console.log(snapshot);
 
         this.images = [];
 
         if (!snapshot.empty) {
           snapshot.forEach(img => {
-            // console.log(img);
+            // // console.log(img);
 
             let dt = img.data();
             this.images.push(dt);
@@ -125,13 +125,13 @@ export default {
     //   .doc(hid)
     //   .get()
     //   .then(response => {
-    //     console.log(response.data());
+    //     // console.log(response.data());
     //   });
   },
   methods: {
     showSingleHotelDetails: (event, id) => {
       event.preventDefault();
-      console.log(id);
+      // console.log(id);
       store.commit("setSelectedHotel", id);
       router.push("hotel-details");
     }

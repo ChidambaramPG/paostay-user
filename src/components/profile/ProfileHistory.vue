@@ -121,7 +121,7 @@ export default {
       .get()
       .then(snapshot => {
         snapshot.forEach(item => {
-          console.log(item.data());
+          // console.log(item.data());
           this.bookings.push(item.data());
         });
       });

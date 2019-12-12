@@ -140,7 +140,7 @@ export default {
 
         let diffTime = chkt - chkn;
         let days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-        console.log("nights: ",days)
+        // console.log("nights: ",days)
         return days;
       }else if(this.checkinDate == '' || this.checkoutDate == ''){
         return 1;
@@ -150,7 +150,7 @@ export default {
 
         let diffTime = chkt - chkn;
         let days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-        console.log("nights: ",days)
+        // console.log("nights: ",days)
         return days;        
       }
       
@@ -185,7 +185,7 @@ export default {
   methods: {
     showSingleHotelDetails: (event, id) => {
       event.preventDefault();
-      console.log(id);
+      // console.log(id);
       store.commit("setSelectedHotel", id);
       router.push("hotel-details");
     },

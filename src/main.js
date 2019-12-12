@@ -31,10 +31,10 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 firebase.auth().onAuthStateChanged((st) => {
-  console.log(st);
-  console.log("auth state changed");
+  // console.log(st);
+  // console.log("auth state changed");
   if (!app) {
-    console.log('initializing vue');
+    // console.log('initializing vue');
     Vue.config.productionTip = false;
     app = new Vue({
       router,

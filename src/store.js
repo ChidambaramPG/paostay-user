@@ -32,13 +32,13 @@ export default new Vuex.Store({
       state.profileSection = payload;
     },
     setHotelList: (state,payload) => {
-      console.log("setting hotels list")
-      console.log(payload)
+      // console.log("setting hotels list")
+      // console.log(payload)
       state.hotelsList = payload;
       state.filteredHotelList = payload;
     },
     setSelectedHotel: ( state,payload ) => {
-      console.log('setting selected hotel');
+      // console.log('setting selected hotel');
       state.hotelsList.forEach((hotel)=>{
         if(hotel.uid == payload){
           state.selectedHotel = hotel;
@@ -52,11 +52,11 @@ export default new Vuex.Store({
       state.showLoginModal = payload;
     },
     setSignupModalStatus: (state, payload) => {
-      console.log(payload);
+      // console.log(payload);
       state.showSignupModal = payload;
     },
     setLoginModalStatus: (state, payload) => {
-      console.log(payload);
+      // console.log(payload);
       state.showLoginModal = payload;
     },
     setBookingDetails: (state,payload) => {
@@ -84,8 +84,8 @@ export default new Vuex.Store({
       state.hotelRoomTypes = payload;
       if(state.selectedRoomType != ""){
         payload.some( (item) => {
-          console.log(item.id,state.selectedRoomType)
-          console.log(item.roomTypeId == state.selectedRoomType)
+          // console.log(item.id,state.selectedRoomType)
+          // console.log(item.roomTypeId == state.selectedRoomType)
           
             if(item.roomTypeId == state.selectedRoomType){
               state.selectedRoomDetails = item;
@@ -125,14 +125,14 @@ export default new Vuex.Store({
 
       let tempAmnHotels = []
       fHotels.forEach((item,index) => {
-        console.log(item.general.name)
+        // console.log(item.general.name)
         for(let key in item.amenities){
           amnFilter.forEach((item2,index2) => {
 
             if(key == item2){
-              console.log(item.amenities[key].status)
+              // console.log(item.amenities[key].status)
               if(item.amenities[key].status == true){
-                console.log(item.general.name)
+                // console.log(item.general.name)
                 tempAmnHotels.push(item);
               }
             }
@@ -142,7 +142,7 @@ export default new Vuex.Store({
         
       })
 
-      console.log([...new Set(tempAmnHotels)]);
+      // console.log([...new Set(tempAmnHotels)]);
       state.filteredHotelList = [...new Set(tempAmnHotels)];
     }
   },
@@ -152,7 +152,7 @@ export default new Vuex.Store({
       let htls = [];
       let roomTypeId = state.selectedRoomType;
       let location = state.location;
-      console.log("roomTypeId:",roomTypeId);
+      // console.log("roomTypeId:",roomTypeId);
       if(roomTypeId != ""){
         await firebase.firestore()
             .collection("Rooms")
@@ -161,10 +161,10 @@ export default new Vuex.Store({
             .then( (response) => {
               let hotels = [];
               response.forEach( (item) => {
-                console.log(item.data())
+                // console.log(item.data())
                 hotels.push(firebase.firestore().collection("Hotels").doc(item.data().hotelId).get())
               })
-              console.log(hotels)
+              // console.log(hotels)
               Promise.all(hotels).then( item =>{
                 let htls = [];
                 item.forEach( a => {
@@ -176,7 +176,7 @@ export default new Vuex.Store({
                     htls.push({...a.data(),uid:a.id})                    
                   }                  
                 })
-                console.log(htls);
+                // console.log(htls);
                 commit("setHotelList",htls);
               })
             })
@@ -186,11 +186,11 @@ export default new Vuex.Store({
             where("status","==","accepted").
             get().
             then((snapshot)=>{
-                console.log(snapshot)
+                // console.log(snapshot)
                 snapshot.forEach(element => {
                     htls.push({...element.data(),uid:element.id})
                 });
-                console.log(htls)
+                // console.log(htls)
                 // this.hotels = htls;
                 commit("setHotelList",htls);
             });
@@ -202,7 +202,7 @@ export default new Vuex.Store({
     },
     setLoginStatus: ({commit}) => {
       let user = firebase.auth().currentUser;
-      // console.log(user)
+      // // console.log(user)
       if (user){
         commit("setLogin",true)
       }else{
@@ -214,7 +214,7 @@ export default new Vuex.Store({
       let dbRef = firebase.firestore().collection("Rooms").where("hotelId","==",state.selectedHotel.uid);
 
       dbRef.get().then( (response) => {
-        // console.log(response)
+        // // console.log(response)
         let types = []
         response.forEach( (item) => {
           types.push({...item.data(),id:item.id});
@@ -227,7 +227,7 @@ export default new Vuex.Store({
       let dbRef = firebase.firestore().collection("Rooms").where("hotelId","==",state.selectedHotel.uid);
 
       dbRef.get().then( (response) => {
-        // console.log(response)
+        // // console.log(response)
         let types = []
         response.forEach( (item) => {
           types.push({...item.data(),id:item.id});
@@ -236,7 +236,7 @@ export default new Vuex.Store({
       })
     },
     fetchAllHotels: ({commit,state}) => {
-      console.log('fetching all hotels')
+      // console.log('fetching all hotels')
       let htls = [];
       let locs = []
       firebase.firestore().
@@ -244,12 +244,12 @@ export default new Vuex.Store({
             where("status","==","accepted").
             get().
             then((snapshot)=>{
-                // console.log(snapshot)
+                // // console.log(snapshot)
                 snapshot.forEach(element => {
                   locs.push(element.data().location.city)
                   htls.push({...element.data(),uid:element.id})
                 });
-                console.log('hotels: ',htls)
+                // console.log('hotels: ',htls)
                 // this.hotels = htls;
                 commit("setHotelList",htls);
                 commit('setLocationsList',locs)
@@ -261,7 +261,7 @@ export default new Vuex.Store({
     fetchAmenities: ({state,commit}) => {
       let temp = [];
       firebase.firestore().collection('Amenities').get().then( response => {
-        console.log(response.docs)
+        // console.log(response.docs)
         response.docs.forEach(doc => {
           temp.push({id:doc.id,data:doc.data()});
         });

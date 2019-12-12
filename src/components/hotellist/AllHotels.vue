@@ -25,7 +25,7 @@ export default {
     }
   },
   created(){
-    console.log('fetching hotel')
+    // console.log('fetching hotel')
     if(this.hotelListFetched.length < 1){
       this.$store.dispatch("fetchAllHotels");  
     }else{

@@ -178,7 +178,7 @@ export default{
     roomTypeSelected:function(){
     	if(this.roomTypes.length > 0){
     		let selcIndx = this.selectedRoomTypeIndex;
-	    	console.log(this.roomTypes[selcIndx])
+	    	// console.log(this.roomTypes[selcIndx])
 	    	return this.roomTypes[selcIndx]
     	}
     },
@@ -197,7 +197,7 @@ export default{
     places:function(){
         // let loc = this.location;
         let locs = []
-        console.log(this.location);
+        // console.log(this.location);
         if(this.location.length > 0){
             this.allHotels.forEach(item => {
                 if(item.location.city.toUpperCase().includes(this.location.toUpperCase())){
@@ -210,12 +210,12 @@ export default{
   },
 
   created(){
-  	console.log("----seachbar created---")
+  	// console.log("----seachbar created---")
   	let dbRef = firebase.firestore().collection("RoomTypes");
     dbRef.get().then((response) => {
         let types = []
         response.forEach((item) => {
-            console.log(item.data())
+            // console.log(item.data())
             types.push({ ...item.data(), id: item.id })
         })
         this.roomTypes = types;

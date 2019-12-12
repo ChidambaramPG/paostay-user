@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <MainNavigation/>
+    <MainNavigation v-if="scrollValue <300"/>
+    <AlternateNavigation v-else/>
     <section class="bg-slider">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -35,6 +36,7 @@
 <script>
 
 import MainNavigation from "@/components/MainNavigation.vue";
+import AlternateNavigation from '../components/AlternateNavigation.vue';
 import Footer from "../components/Footer";
 import store from "../store.js";
 import Datepicker from "vuejs-datepicker";
@@ -70,7 +72,8 @@ export default {
           adultCount:1,
           guestCount:0,
           location:"",
-          roomCount:1
+          roomCount:1,
+          scrollValue:0
 
       }
   },
@@ -122,6 +125,13 @@ export default {
       }
     }
   },
+  created(){
+    window.onscroll = function (event) {
+      console.log(window.screenY)
+      this.scrollValue = window.scrollY;
+
+    }
+  }
 };
 </script>
 <style>

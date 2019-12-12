@@ -47,6 +47,9 @@
                   <a class="dropdown-item" href="#">Hindi</a>
                 </div>
               </li>
+              <li class="nav-item dropdown">
+                <a class="dropdown-item" href="#" @click="visitProfile">Profile</a>
+              </li>
               <li>
                 <div class="log-btn" v-if="!loginStatus">
                   <button class="btn btn-primary btn-login" @click="toggleLoginModal">login / register</button>
@@ -86,16 +89,20 @@ export default {
   },
   methods:{
       toggleLoginModal:function(){
-          console.log("toggle modal")
+          // console.log("toggle modal")
           this.$store.commit("setShowLoginModal",true);
-          console.log(this.$store.state.showLoginModal)
-        //   console.log("modal stat: ",this.showLoginModal)
+          // console.log(this.$store.state.showLoginModal)
+        //   // console.log("modal stat: ",this.showLoginModal)
       },
       logoutUser: function(){
-          console.log("logging out");
+          // console.log("logging out");
           firebase.auth().signOut();
         //   this.isLoggedIn = false;
           this.$store.dispatch("setLoginStatus");
+          this.$router.push('/')
+      },
+      visitProfile(){
+        this.$router.push('profile')
       }
   },
   components:{
@@ -104,6 +111,21 @@ export default {
   },
   mounted(){
       this.$store.dispatch("setLoginStatus");
+  },
+  created(){
+    var navBar = null;
+    window.onscroll = function (event) {
+      
+      if (window.scrollY > 300) {
+        navBar = document.getElementById('main-nav');
+        // // console.log(navBar)
+        navBar.classList.add('bg-white');
+        navBar.classList.remove('bg-light');
+      }else{
+        navBar.classList.add('bg-white');
+        navBar.classList.remove('bg-light');
+      }
+    }
   }
   
 };

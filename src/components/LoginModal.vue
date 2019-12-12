@@ -54,7 +54,7 @@ export default {
     },
     computed: {
         showModal: function() {
-            console.log(this.$store.state.showLoginModal);
+            // console.log(this.$store.state.showLoginModal);
             return this.$store.state.showLoginModal;
         },
 
@@ -65,7 +65,7 @@ export default {
             this.$store.commit("setShowLoginModal", false);
         },
         signInMethod: function() {
-            //   console.log(router);
+            //   // console.log(router);
 
             if (this.email && this.password) {
                 if (this.validEmail(this.email)) {
@@ -76,7 +76,7 @@ export default {
                             .auth()
                             .signInWithEmailAndPassword(this.email, this.password)
                             .then(user => {
-                                console.log(user);
+                                // console.log(user);
                                 this.$store.commit("setLoginModalStatus", false);
                                 this.$store.commit("setLogin", true);
                             });

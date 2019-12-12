@@ -184,7 +184,7 @@ export default {
       // store.dispatch('fetchAmenities');
       let temp = []
       firebase.firestore().collection('Amenities').get().then( response => {
-        console.log(response.docs)
+        // console.log(response.docs)
         response.docs.forEach(doc => {
           temp.push({id:doc.id,data:doc.data()});
         });
@@ -203,7 +203,7 @@ export default {
     },
     methods: {
       addAmenityToFilter(amnty,event){
-        console.log(event)
+        // console.log(event)
         let itemPresent = false;
         let temp = []
         

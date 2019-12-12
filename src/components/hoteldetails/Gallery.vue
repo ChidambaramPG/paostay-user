@@ -44,14 +44,14 @@ import firebase from 'firebase';
 		    .get()
 		    .then( snapshot => {
 
-		    	console.log(snapshot)
+		    	// console.log(snapshot)
 
 		      this.images = []
 
 		      if(!snapshot.empty){
 
 		      	snapshot.forEach( img => {
-			        console.log(img)
+			        // console.log(img)
 			        
 			        let dt = img.data();
 			        this.images.push(dt)

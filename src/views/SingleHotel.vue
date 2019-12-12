@@ -112,12 +112,12 @@ export default {
     amenitiesAvailable: function(){
       let hotel = this.$store.state.selectedHotel;
       let hotelAmn = []
-      console.log("amenities",hotel)
+      // console.log("amenities",hotel)
 
       Object.keys(hotel.amenities).forEach( (item) => {
-        console.log(item)
+        // console.log(item)
         if(hotel.amenities[item].status){
-          console.log("item present: ",item)
+          // console.log("item present: ",item)
           hotelAmn.push(item)
         }
       })

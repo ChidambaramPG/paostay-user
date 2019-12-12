@@ -54,7 +54,7 @@ export default {
     },
     computed: {
         showModal() {
-            console.log("amaenity component: ", store.state.showSignupModal);
+            // console.log("amaenity component: ", store.state.showSignupModal);
             return store.state.showSignupModal;
         }
     },
@@ -65,15 +65,18 @@ export default {
         signupUser(){
           if( this.email!="" && this.password!= "" & this.confPass!="" & this.password == this.confPass){
             firebase.auth().createUserWithEmailAndPassword(this.email,this.password).then(res => {
-                console.log("created");
-                firebase.firestore().collection("Users").add({
-                    email:this.email,
-                    status:"active",
-                    signupDate:new Date(),
-                });
+                // console.log("created");
+                
                 firebase.auth().signInWithEmailAndPassword(this.email,this.password).then(res => {
                     store.commit("setSignupModalStatus", false);
                     store.commit("setLogin",true);
+                    firebase.firestore().collection("Users").doc(firebase.auth().currentUser.uid).set({
+                        email:this.email,
+                        status:"active",
+                        signupDate:new Date(),
+                    });
+                    
+
                 }).catch( error => {
                     alert(error.message)
                 })
