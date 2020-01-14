@@ -81,7 +81,7 @@ export default {
                                 this.$store.commit("setLogin", true);
                             });
                         }else{
-                            alert("Not authorised");
+                            this.$toast.error("You are not authorised lo login to this application");
                         }
                     })
                     

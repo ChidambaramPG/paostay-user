@@ -517,7 +517,6 @@ export default {
         this.$store.commit("setShowLoginModal", true);
       } else {
         if (this.username == "" || this.phone == "" || this.email == "") {
-          // alert("some details are missing");
           this.$toast.error("some details are missing");
         } else {
           if (this.offerSelected.couponName != undefined) {
@@ -558,7 +557,7 @@ export default {
 
           bookingRef.add(bookingData).then(response => {
             // console.log(response);
-            alert("booking confirmed");
+            // this.$toast.error("booking confirmed");
             this.$toast.success("Booking confirmed.")
             this.$toast.info(' Redirecting to profile.')
             router.replace("profile");
@@ -577,7 +576,7 @@ export default {
         image: "https://example.com/your_logo",
         order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below
         handler: function(response) {
-          alert(response.razorpay_payment_id);
+          this.$toast.error(response.razorpay_payment_id);
         },
         prefill: {
           name: "Gaurav Kumar",
@@ -615,7 +614,6 @@ export default {
       //     //     "image": "https://example.com/your_logo",
       //     //     "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below
       //     //     "handler": function(response) {
-      //     //         alert(response.razorpay_payment_id);
       //     //     },
       //     //     "prefill": {
       //     //         "name": "Gaurav Kumar",
@@ -672,7 +670,7 @@ export default {
       // };
 
       if (this.username == "" || this.phone == "" || this.email == "") {
-        alert("some details are missing");
+        this.$toast.error("some details are missing");
       } else {
         let bookingData = {
           adultCount: this.adultCount,
@@ -700,7 +698,7 @@ export default {
         let bookingRef = firebase.firestore().collection("Booking");
         bookingRef.add(bookingData).then(response => {
           // console.log(response);
-          alert("booking confirmed");
+          this.$toast.success("booking confirmed");
           router.replace("profile");
         });
       }

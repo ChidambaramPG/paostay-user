@@ -89,7 +89,7 @@ export default {
             this.$store.commit("setBookingDetails",details);
             this.$router.replace("hotel-list")
         }else{
-            alert("incorect data");
+            this.$toast.error("incorect data");
         }
       
     },
