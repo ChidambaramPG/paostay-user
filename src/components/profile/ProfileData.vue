@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-4">
               <div class="profile-btn">
-                <button type="submit" class="btn btn-primary profile float-right">edit profile</button>
+                <!-- <button type="submit" class="btn btn-primary profile float-right">edit profile</button> -->
               </div>
             </div>
           </div>

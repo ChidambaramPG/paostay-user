@@ -7,9 +7,9 @@
       <a href="#" class="profile-sidebar" @click="()=> setProfileSection('wallet')">
         <i class="fas fa-wallet btn-gear bg-color"></i> pao wallet
       </a><br>
-      <a href="#" class="profile-sidebar" @click="()=> setProfileSection('favourite')">
+      <!-- <a href="#" class="profile-sidebar" @click="()=> setProfileSection('favourite')">
         <i class="fas fa-bookmark btn-gear bg-color"></i> favourites
-      </a><br>
+      </a><br> -->
       <a href="#" class="profile-sidebar" @click="()=> setProfileSection('info')">
         <i class="fas fa-user-alt btn-gear bg-color"></i> profile info
       </a><br>

@@ -1,4 +1,4 @@
-  <template>
+<template>
   <div class="col-md-4">
     <div class="booking">
       <form action class="form1">
@@ -8,7 +8,12 @@
               <label class for="checkin">check in</label>
               <div class="input-group mb-2 mr-sm-2">
                 <!-- <input type="text" class="form-control1" id="checkin" placeholder="17 June 2019" /> -->
-                <datepicker :value="checkinDate" v-model="checkinDate" input-class="form-control" :highlighted="highlightedDates"></datepicker>
+                <datepicker
+                  :value="checkinDate"
+                  v-model="checkinDate"
+                  input-class="form-control"
+                  :highlighted="highlightedDates"
+                ></datepicker>
               </div>
             </div>
           </div>
@@ -17,7 +22,12 @@
               <label class for="checkout">check out</label>
               <div class="input-group mb-2 mr-sm-2">
                 <!-- <input type="text" class="form-control1" id="checkout" placeholder="17 June 2019" /> -->
-                <datepicker :value="checkoutDate" v-model="checkoutDate" input-class="form-control" :highlighted="highlightedDates"></datepicker>
+                <datepicker
+                  :value="checkoutDate"
+                  v-model="checkoutDate"
+                  input-class="form-control"
+                  :highlighted="highlightedDates"
+                ></datepicker>
               </div>
             </div>
           </div>
@@ -25,7 +35,7 @@
             <div class="form-field1">
               <label class for>rooms</label>
               <div class="input-group mb-2 mr-sm-2">
-                <input type="number" class="form-control" v-model="roomCount"/>
+                <input type="number" class="form-control" v-model="roomCount" />
               </div>
             </div>
           </div>
@@ -34,29 +44,18 @@
       <div class="input-box">
         <div class="booking-details">
           <i class="fas fa-user-plus btn-user"></i>
-          <span class="booking-summary_room">{{adultCount}} guest,{{roomCount}} {{ selectedRoomDetails.roomName }}</span>
-          <span class="total">₹{{ selectedRoomDetails.price * roomCount }} total</span>
+          <span class="booking-summary_room"
+            >{{ adultCount }} guest,{{ roomCount }}
+            {{ selectedRoomDetails.roomName }}</span
+          >
+          <span class="total"
+            >₹{{ selectedRoomDetails.price * roomCount }} total</span
+          >
           <a href="#" class="pull-right">
-            <i class="fa fa-gear pull-right btn-gear"></i>
+            <i class="fas fa-gear pull-right btn-gear"></i>
           </a>
         </div>
-        <div class="booking-details">
-          <img src="../../assets/image/restaurant1.png" class="img-food" />
-          <span class="breakfast-banner-text">add breakfast for ₹50</span>
-          <span class="rooms">{{roomCount}} room and {{adultCount}} guest</span>
-          <div class="custom-control custom-checkbox pull-right hotel-page">
-            <input type="checkbox" class="custom-control-input" id="is-checked" checked />
-            <label class="custom-control-label checkbox-discount" for="is-checked"></label>
-          </div>
-        </div>
-        <!-- <div class="booking-details result">
-          <p>price for:{{adultCount}} guest, {{roomCount}} {{ selectedRoomDetails.roomName }}, {{totalNights}} night</p>
-          <span class="rate">₹{{ selectedRoomDetails.price * totalNights }}</span>
-          <span class="overline">₹{{ (selectedRoomDetails.price * totalNights) * (discount/100)}}</span>
-          <span class="offer" v-if="discount != null">{{discount}}% off</span>
-          <br />
-          <span class="tax">(Inclusive of all taxes)</span>
-        </div> -->
+
         <div class="log-btn">
           <button class="btn btn-primary btn-continue" @click="bookRoomsNow">
             continue to book
@@ -73,6 +72,10 @@
             Guests can check in using any local or
             <br />outstation ID proof(PAN card not accepted).
           </li>
+          <li>
+            Check in at {{ getSelectedHotelDetails.general.checkin }} and check
+            out at {{ getSelectedHotelDetails.general.chekout }}
+          </li>
         </ul>
       </div>
     </div>
@@ -88,84 +91,77 @@ import firebase from "firebase";
 export default {
   name: "BookingDetails",
   data() {
-
     return {
-
       adultCount: 1,
-      childCount:0,
-      checkinDate:'',
-      checkoutDate:'',
+      childCount: 0,
+      checkinDate: "",
+      checkoutDate: "",
       date: new Date(),
-      hotelDetails:[],
-      roomCount:1,
-      discount:10,
-      roomTypes:[],
+      hotelDetails: [],
+      roomCount: 1,
+      discount: 10,
+      roomTypes: [],
+      hotelSpecificCoupons:[],
+      generalCoupons:[]
       // selectedRoomPrice:0
-
     };
-
   },
-  components:{
-      Datepicker
+  components: {
+    Datepicker
   },
-  computed:{
-    isDatesCorrect: function () {
-
+  computed: {
+    isDatesCorrect: function() {
       this.checkinDate = store.state.checkinDate;
       this.checkoutDate = store.state.checkoutDate;
 
-      
       let chkn = new Date(store.state.checkinDate);
       let chkt = new Date(store.state.checkoutDate);
 
-      if(chkt < chkn){
+      if (chkt < chkn) {
         return false;
-      }else{
+      } else {
         return true;
       }
     },
-    highlightedDates: function(){
-      if(this.isDatesCorrect){
+    highlightedDates: function() {
+      if (this.isDatesCorrect) {
         return {
-          to:this.checkoutDate,
-          from:this.checkinDate
-        }
+          to: this.checkoutDate,
+          from: this.checkinDate
+        };
       }
     },
-    totalNights(){
-
-      if(store.state.checkinDate != '' || store.state.checkoutDate != ''){
+    totalNights() {
+      if (store.state.checkinDate != "" || store.state.checkoutDate != "") {
         let chkn = new Date(store.state.checkinDate);
         let chkt = new Date(store.state.checkoutDate);
 
         let diffTime = chkt - chkn;
-        let days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+        let days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         // console.log("nights: ",days)
         return days;
-      }else if(this.checkinDate == '' || this.checkoutDate == ''){
+      } else if (this.checkinDate == "" || this.checkoutDate == "") {
         return 1;
-      }else{
+      } else {
         let chkn = new Date(this.checkinDate);
         let chkt = new Date(this.checkoutDate);
 
         let diffTime = chkt - chkn;
-        let days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+        let days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         // console.log("nights: ",days)
-        return days;        
+        return days;
       }
-      
     },
-    selectedRoomId(){
-      return store.state.selectedRoomType
+    selectedRoomId() {
+      return store.state.selectedRoomType;
     },
-    selectedRoomDetails(){
-      if(store.state.selectedRoomDetails == []){
-        store.dispatch('fetchHotelRoomTypesOnEmptySelect');
+    selectedRoomDetails() {
+      if (store.state.selectedRoomDetails == []) {
+        store.dispatch("fetchHotelRoomTypesOnEmptySelect");
       }
       return store.state.selectedRoomDetails;
     },
-    bookingDetails1: function(){
-
+    bookingDetails1: function() {
       let inDate = this.$store.state.checkinDate;
       this.checkinDate = new Date(inDate);
       let outDate = this.$store.state.checkoutDate;
@@ -176,11 +172,47 @@ export default {
       this.roomCount = rCount;
       return true;
     },
-    
+    getSelectedHotelDetails() {
+      return this.$store.state.selectedHotel;
+    },
+    getSelectedHotelCoupons(){
+      return store.state.hotelSpecificCoupons;
+    },
+    getGeneralCoupons(){
+      return store.state.generalCoupons;
+    },
   },
   created() {
     this.hotelDetails = store.state.selectedHotel;
-    store.dispatch("fetchHotelRoomTypes")
+    store.dispatch("fetchHotelRoomTypes");
+    // console.log(firebase.auth().currentUser.uid)
+
+    firebase
+      .firestore()
+      .collection("Coupons")
+      .where("couponHotel", "==", this.getSelectedHotelDetails.uid)
+      .get()
+      .then(resp => {
+        let temp = []
+        resp.forEach(item => {
+          console.log(item.data())
+          temp.push({...item.data(),cid:item.id})
+        })
+        store.commit('setSelectedHotelCoupons',temp)
+      });
+    firebase
+      .firestore()
+      .collection("Coupons")
+      .where("couponType", "==", 'general')
+      .get()
+      .then(resp => {
+        let temp = []
+        resp.forEach(item => {
+          console.log(item.data())
+          temp.push({...item.data(),cid:item.id})
+        })
+        store.commit('setGeneralCoupons',temp)
+      });
   },
   methods: {
     showSingleHotelDetails: (event, id) => {
@@ -189,39 +221,106 @@ export default {
       store.commit("setSelectedHotel", id);
       router.push("hotel-details");
     },
-    bookRoomsNow: function(){
-      if(this.checkinDate == '' || this.checkoutDate == ''){
-        alert("checkin date and checkout dates are required")
-      }else{
-        store.commit('setBookingDetails',{checkinDate:this.checkinDate,checkoutDate:this.checkoutDate,roomCount:this.roomCount})
-        router.replace("booking-confirm")
+    bookRoomsNow: function() {
+      if (this.checkinDate == "" || this.checkoutDate == "") {
+        // alert("checkin date and checkout dates are required");
+        this.$toast.error("checkin date and checkout dates are required")
+      } else {
+        store.commit("setBookingDetails", {
+          checkinDate: this.checkinDate,
+          checkoutDate: this.checkoutDate,
+          roomCount: this.roomCount
+        });
+        router.replace("booking-confirm");
       }
-      
     },
-    calculateCancelDay: function(){
-      if(this.$store.state.checkinDate != '' || this.$store.state.checkinDate != ''){
+    calculateCancelDay: function() {
+      if (
+        this.$store.state.checkinDate != "" ||
+        this.$store.state.checkinDate != ""
+      ) {
         let dt = new Date(this.$store.state.checkinDate);
-        dt.setDate(dt.getDate() - parseInt(this.hotelDetails.general.cancelDays))
-        let months= ["Jan" ,"Feb", "Mar" ,"Apr" ,"May" ,"Jun" ,"Jul" ,"Aug" ,"Sep" ,"Oct" ,"Nov" ,"Dec" ]
+        dt.setDate(
+          dt.getDate() - parseInt(this.hotelDetails.general.cancelDays)
+        );
+        let months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ];
 
-        return dt.getDate() + " " + months[dt.getMonth()+1]+ " " + dt.getFullYear();
-      }else if(this.checkoutDate == '' || this.checkinDate == ''){
+        return (
+          dt.getDate() +
+          " " +
+          months[dt.getMonth() + 1] +
+          " " +
+          dt.getFullYear()
+        );
+      } else if (this.checkoutDate == "" || this.checkinDate == "") {
         let dt = new Date();
-        dt.setDate(dt.getDate() - parseInt(this.hotelDetails.general.cancelDays))
-        let months= ["Jan" ,"Feb", "Mar" ,"Apr" ,"May" ,"Jun" ,"Jul" ,"Aug" ,"Sep" ,"Oct" ,"Nov" ,"Dec" ]
+        dt.setDate(
+          dt.getDate() - parseInt(this.hotelDetails.general.cancelDays)
+        );
+        let months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ];
 
-        return dt.getDate() + " " + months[dt.getMonth()+1]+ " " + dt.getFullYear();
-      }else{
+        return (
+          dt.getDate() +
+          " " +
+          months[dt.getMonth() + 1] +
+          " " +
+          dt.getFullYear()
+        );
+      } else {
         let dt = new Date(this.checkinDate);
-        dt.setDate(dt.getDate() - parseInt(this.hotelDetails.general.cancelDays))
-        let months= ["Jan" ,"Feb", "Mar" ,"Apr" ,"May" ,"Jun" ,"Jul" ,"Aug" ,"Sep" ,"Oct" ,"Nov" ,"Dec" ]
+        dt.setDate(
+          dt.getDate() - parseInt(this.hotelDetails.general.cancelDays)
+        );
+        let months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ];
 
-        return dt.getDate() + " " + months[dt.getMonth()+1]+ " " + dt.getFullYear();
+        return (
+          dt.getDate() +
+          " " +
+          months[dt.getMonth() + 1] +
+          " " +
+          dt.getFullYear()
+        );
       }
-      
     }
-    
-    
   }
 };
 </script>

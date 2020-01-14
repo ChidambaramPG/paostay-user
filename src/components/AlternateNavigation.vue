@@ -2,7 +2,7 @@
   <div>
     <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
       <div class="container">
-        <img class="navbar-brand" src="../assets/image/logo-footer.png" />
+        <img class="navbar-brand" src="../assets/image/logo-footer.png" @click="handleBackHome"/>
         <button
           class="navbar-toggler"
           type="button"
@@ -16,7 +16,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="#">
                 destinations
                 <span class="sr-only">(current)</span>
@@ -30,7 +30,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">trip guide</a>
-            </li>
+            </li> -->
           </ul>
           <span class="navbar-text">
             <ul class="navbar-nav">
@@ -89,10 +89,7 @@ export default {
   },
   methods:{
       toggleLoginModal:function(){
-          // console.log("toggle modal")
           this.$store.commit("setShowLoginModal",true);
-          // console.log(this.$store.state.showLoginModal)
-        //   // console.log("modal stat: ",this.showLoginModal)
       },
       logoutUser: function(){
           // console.log("logging out");
@@ -103,6 +100,9 @@ export default {
       },
       visitProfile(){
         this.$router.push('profile')
+      },
+      handleBackHome(){
+        this.$router.push('/')
       }
   },
   components:{

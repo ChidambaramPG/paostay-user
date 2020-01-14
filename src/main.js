@@ -3,11 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import * as VueGoogleMaps from "vue2-google-maps";
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/index.css';
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import firebase from "firebase";
+
+Vue.use(VueToast);
 
 Vue.use(VueGoogleMaps, {
   load: {

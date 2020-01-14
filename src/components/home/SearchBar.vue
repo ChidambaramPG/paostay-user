@@ -7,7 +7,7 @@
                         <div class="form-field border-r">
                             <label class="location" for="location">Location</label>
                             <div class="input-group mb-2 mr-sm-2">
-                                <input autocomplete="off" v-model="location" type="text" class="form-control" id="location" placeholder="Alappuzha" value="Alappuzha" />
+                                <input autocomplete="off" v-model="location" type="text" class="form-control" id="location" placeholder="Location" />
                                 
                                 <div class="compass">
                                     <a href="#"><img src="../../assets/image/vector.png" alt=""></a>
@@ -48,30 +48,38 @@
                             <div class="dropdown-menu" aria-labelledby="guestCounts" @click.stop="">
                                 <a class="guest-count-dropdown">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             Room Type
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             Rooms
                                         </div>
-                                        <div class="col-md-4">
-                                           Guests
+                                        <div class="col-md-3">
+                                           Adults
+                                        </div>
+                                        <div class="col-md-3">
+                                           Children
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row guest-counts">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <select v-model="selectedRoomTypeIndex" name id class="form-control rooms">
 	                                            <option v-for="(type,index) in roomTypes" :key="index" :value="index" :id="index">{{type.roomName}}</option>
 	                                        </select>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             {{roomCountChange}} 
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <a class="btn btn-small"  @click="decrAdultCount">-</a>
                                             <span class="font-weight-bold">{{adultCount}}</span>
                                             <a @click="incrAdultCount" class="btn btn-small">+</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="btn btn-small"  @click="decrChildCount">-</a>
+                                            <span class="font-weight-bold">{{childCount}}</span>
+                                            <a @click="incrChildCount" class="btn btn-small">+</a>
                                         </div>
 
                                     </div>
@@ -107,6 +115,7 @@ export default{
           checkinDate:new Date(),
           checkoutDate:new Date(),
           adultCount:1,
+          childCount:0,
           guestCount:0,
           location:"",
           roomCount:1,
@@ -115,12 +124,14 @@ export default{
       }
   },
   methods:{
+
     showHotelList(){
         if(this.isDatesCorrect && this.location != "" && this.adultCount >= 1){
             let details = {
                 checkinDate:this.checkinDate,
                 checkoutDate:this.checkoutDate,
                 adultCount:this.adultCount,
+                childCount:this.childCount,
                 location:this.location,
                 type:this.roomTypeSelected.id,
                 roomCount:this.roomCountChange
@@ -140,7 +151,16 @@ export default{
         if(this.adultCount>1){
             this.adultCount--;
         }
-       
+    },
+    incrChildCount(){
+        
+        this.childCount++;
+        this.adultCount = Math.ceil(this.childCount/2)
+    },
+    decrChildCount(){
+        if(this.childCount>0){
+            this.childCount--;
+        }
     },
     setLocationFromAutocomplete(place){
         this.location = place;
@@ -179,7 +199,18 @@ export default{
     	if(this.roomTypes.length > 0){
     		let selcIndx = this.selectedRoomTypeIndex;
 	    	// console.log(this.roomTypes[selcIndx])
-	    	return this.roomTypes[selcIndx]
+            return this.roomTypes[selcIndx]
+
+            // let adults = this.adultCount;
+            // let children = this.childCount;
+            // let totGuests = adults + children;
+            // let temp = []
+            // this.roomTypes.forEach(item => {
+            //     temp.push({prob:totGuests/item.maxGuests,room:item.roomName,max:item.maxGuests})
+            // })
+            
+            // console.log(temp)
+            
     	}
     },
     roomCountChange: function(){
@@ -215,7 +246,7 @@ export default{
     dbRef.get().then((response) => {
         let types = []
         response.forEach((item) => {
-            // console.log(item.data())
+            console.log(item.data())
             types.push({ ...item.data(), id: item.id })
         })
         this.roomTypes = types;
@@ -235,7 +266,7 @@ export default{
     background-color: white;
 }  
 .guest-counts{
-    width:400px;
+    width:500px;
     padding-left:10px
 }
 .guest-count-dropdown{
